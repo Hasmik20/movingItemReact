@@ -1,38 +1,123 @@
 .App {
-  text-align: center;
+  margin: 5%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.testContainer {
+  margin-top: 100px;
+  width: 300px;
+  border: 2px solid red;
+  background-color: blue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.childContainer {
+  border: 1pd solid gray;
+  width: 50px;
+  margin: auto;
+  background-color: yellow;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #adaa9f;
+}
+h2 {
+  color: rgb(231, 206, 206);
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.appP {
+  color: rgb(143, 125, 125);
+  text-shadow: 1px 1px #b65454;
+  margin-top: -5px;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(219, 144, 144);
+  position: relative;
+  margin-left: 5%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.count {
+  margin: 0;
+  /* position: absolute; */
   color: white;
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.moveItem {
+  animation: move 10s backwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pauseItem {
+  animation-play-state: paused;
+}
+
+@keyframes move {
+  0% {
+    top: 0;
+    left: 0%;
   }
-  to {
+
+  100% {
+    top: 0;
+    left: calc(100% - 20%);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: -40px;
+  }
+
+  100% {
+    top: 0;
+
+  }
+}
+
+/*popUp window*/
+.popUpTable {
+  width: 25vw;
+  height: 15vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  position: relative;
+  z-index: 999;
+}
+
+.popUpTable p {
+  padding-top: 2%;
+}
+
+.popUpTable span {
+  position: absolute;
+  top: -9px;
+  right: 0;
+  cursor: pointer;
+
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
   }
 }
